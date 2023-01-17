@@ -18,7 +18,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     CommentsModule,
     UsersModule,
     VideosModule,
-    DashboardModule
+    DashboardModule,
   ]
 })
 export class ComponentsModule { }

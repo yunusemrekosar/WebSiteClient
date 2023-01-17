@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChannelsComponent } from './channels.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -11,7 +12,10 @@ import { ChannelsComponent } from './channels.component';
     ChannelsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild([
+      {path: "" , component: ChannelsComponent},
+    ])
   ]
 })
 export class ChannelsModule { }

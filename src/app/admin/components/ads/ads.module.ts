@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdsComponent } from './ads.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -9,7 +10,11 @@ import { AdsComponent } from './ads.component';
     AdsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild([
+      {path: "" , component: AdsComponent},
+    ])
+
   ]
 })
 export class AdsModule { }
