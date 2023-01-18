@@ -1,5 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http"
+import { Observable, observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,26 +13,44 @@ export class HttpclientService {
     return `${RequestParameters.baseurl ? RequestParameters.baseurl : this.baseurl}/${RequestParameters.controller}${RequestParameters.action ? `/${RequestParameters.action}` : ""}`;
   }
 
-  get<T>(RequestParameters: Partial<RequestParameters>, id?: string){
+  get<T>(RequestParameters: Partial<RequestParameters>, id?: string): Observable<T>{
     let url: string = "";
     if (RequestParameters.fullEndPoint)
       url = RequestParameters.fullEndPoint;
     else
-      url = `${this.url(RequestParameters)}${id ? `/${id}` : ""}`;
+      url = `${this.url(RequestParameters)}${id ? `/${id}` : ""}` ;
 
     return this.httpclient.get<T>(url, { headers: RequestParameters.headers });
   }
 
-  put() {
+  post<T>(RequestParameters: Partial<RequestParameters>, body: Partial<T>): Observable<T>{
+    let url: string = "";
+    if (RequestParameters.fullEndPoint)
+      url = RequestParameters.fullEndPoint;
+    else
+      url = `${this.url(RequestParameters)}`;
 
+     return this.httpclient.post<T>(url, body,{ headers: RequestParameters.headers });
   }
 
-  post() {
+  put<T>(RequestParameters: Partial<RequestParameters>, body: Partial<T>): Observable<T>{
+    let url: string = "";
+    if (RequestParameters.fullEndPoint)
+      url = RequestParameters.fullEndPoint;
+    else
+      url = `${this.url(RequestParameters)}`;
 
+     return this.httpclient.put<T>(url, body,{ headers: RequestParameters.headers });
   }
 
-  delete() {
+  delete<T>(RequestParameters: Partial<RequestParameters>, id: number){
+    let url: string = "";
+    if (RequestParameters.fullEndPoint)
+      url = RequestParameters.fullEndPoint;
+    else
+      url = `${this.url(RequestParameters)}/${id}`;
 
+    return this.httpclient.delete<T>(url, { headers: RequestParameters.headers });
   }
 }
 
