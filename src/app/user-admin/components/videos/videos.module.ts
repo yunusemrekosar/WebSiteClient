@@ -4,7 +4,6 @@ import { VideosComponent } from './videos.component';
 import { RouterModule } from '@angular/router';
 
 
-
 @NgModule({
   declarations: [
     VideosComponent

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ComponentsModule } from './components/components.module';
 import { LayoutModule } from './layout/layout.module';
-
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -11,7 +11,9 @@ import { LayoutModule } from './layout/layout.module';
     CommonModule,
     ComponentsModule,
     LayoutModule
-    
+  ],
+  exports:[
+    LayoutModule
   ]
 })
 export class UserAdminModule { }

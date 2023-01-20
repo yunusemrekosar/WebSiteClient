@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from '@angular/router'
 declare var $: any
 
 @Component({
@@ -8,6 +9,16 @@ declare var $: any
 })
 export class AppComponent {
   title = 'WebSiteClient';
+
+  
+constructor(private router : Router){}
+
+  gotopage(pageName: string):void{
+    this.router.navigate([`${pageName}`]); 
+  }
+
+
 }
 
-$.get("https://localhost:7050/api/users", (data: any) =>{ console.log(data)})
+
+

@@ -4,6 +4,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
 import { SidebarModule } from './sidebar/sidebar.module';
+import { LayoutComponent } from '../layout.component';
 
 
 
@@ -14,6 +15,9 @@ import { SidebarModule } from './sidebar/sidebar.module';
     HeaderModule,
     FooterModule,
     SidebarModule
+  ],
+  exports:[
+    LayoutComponent
   ]
 })
 export class ComponentsModule { }
