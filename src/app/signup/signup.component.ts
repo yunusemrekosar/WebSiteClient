@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Create_User } from '../contracts/Create_User';
 import { SignupserviceService } from '../services/user/signupservice.service';
 
@@ -9,10 +10,27 @@ import { SignupserviceService } from '../services/user/signupservice.service';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private signupServices: SignupserviceService) { }
+  constructor(private signupServices: SignupserviceService ) { }
 
+  
+  // frm: FormGroup;
   ngOnInit(): void {
+    // this.frm= this.formBuilder.group({
+    //   firstName: [""],
+    //   lastName : [""],
+    //   userName : [""],
+    //   emailAddress : [""],
+    //   password : [""],
+    //   birthDay :[""],
+    //   phoneNumber : [""],
+    //   country :[""],
+    //   city:[""],
+    //   address: [""]
+    // })
   }
+  // onSubmit(data:any) {
+  //   debugger;
+  // }
 
   create(txtFirstname: HTMLInputElement ,txtLastname: HTMLInputElement ,txtUserName: HTMLInputElement ,txtPassword: HTMLInputElement ,txtPhoneNumber: HTMLInputElement,txtBirthDay: HTMLInputElement  , txtCountry: HTMLInputElement, txtCity: HTMLInputElement, txtAddress: HTMLInputElement, txtemail:HTMLInputElement )
   {
@@ -27,7 +45,7 @@ export class SignupComponent implements OnInit {
      user.Address=txtAddress.value;
      user.Email=txtemail.value;
      user.DateOfBirth = new Date(txtBirthDay.value);
-
+     
      this.signupServices.crateUser(user);
   }
 
