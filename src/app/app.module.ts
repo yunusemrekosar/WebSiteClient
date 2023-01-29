@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import { SignupModule } from './signup/signup.module';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SignupModule } from './signup/signup.module';
     BrowserAnimationsModule,
     HttpClientModule,
     MatButtonModule,
+    ToastrModule.forRoot(), 
   ],
   providers: [
     {provide: "baseurl", useValue:"https://localhost:7050/api", multi: true}
