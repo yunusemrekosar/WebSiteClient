@@ -1,0 +1,52 @@
+<div class="container" style="margin: 2%; padding: auto;">
+  
+      <label for="">First Name / Last Name / User Name </label>
+      <div class="form-group"> 
+      <div class="input-group ">
+        <input type="text"  aria-label="First Name"  class="form-control" placeholder="First Name" #txtFirstname>
+        <input type="text"   aria-label="Last Name" class="form-control" placeholder="Last Name" #txtLastname>
+        <input type="text" aria-label="User Name" class="form-control" placeholder="User Name"#txtUserName>
+      </div>
+    </div>
+      <label for="" class="form-text"> We'll never share your email with anyone else.</label>
+      <br>
+      <br>
+  
+      <label for="">Email Address / Password</label>
+     <div class="form-group"> 
+      <div class="input-group ">
+        <input type="email"  aria-label="Email Address" class="form-control" placeholder="Email Address" #txtemail>
+        <input type="password"  aria-label="Password" class="form-control" placeholder="Password" #txtPassword>
+      </div>
+    </div>
+      <label for="" class="form-text"> We'll never share your email with anyone else.</label>
+      <br>
+      <br>
+  
+      <label for="">Birth Day / Phone Number / Country</label>
+      <div class="form-group"> 
+      <div class="input-group ">
+        <input type="date"  class="form-control" aria-label="Birth Day" id="datetime" #txtBirthDay >
+        <input type="number"  aria-label="Phone Number" class="form-control" placeholder="Phone Number" #txtPhoneNumber >
+        <input type="text" aria-label="Country" class="form-control" placeholder="Country" #txtCountry>
+      </div>
+      </div>
+      <label for="" class="form-text"> We'll never share your email with anyone else.</label>
+      <br>
+      <br>
+  
+      <label for="">City / Country</label>
+      <div class="form-group"> 
+      <div class="input-group ">
+        <input type="text"  aria-label="City" class="form-control" placeholder="City" #txtCity>
+        <input type="text" aria-label="Address" class="form-control" placeholder="Address" #txtAddress>
+      </div>
+      <br>
+      </div>
+      <label for="" class="form-text"> We'll never share your email with anyone else.</label>  
+    
+    <br>
+    <button type="submit" class="btn btn-warning" (click)="create(txtFirstname,txtLastname,txtUserName,txtPassword,txtPhoneNumber,txtBirthDay,txtCountry,txtCity,txtAddress,txtemail)" > Sign Up </button>
+  </div>
+
+  

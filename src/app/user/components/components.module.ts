@@ -4,6 +4,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { HomeModule } from './home/home.module';
 import { ProfileModule } from './profile/profile.module';
 import { ChannelsModule } from './channels/channels.module';
+import { LoginModule } from './login/login.module';
+import { SignupModule } from './signup/signup.module';
 
 
 
@@ -14,7 +16,13 @@ import { ChannelsModule } from './channels/channels.module';
     DashboardModule,
     HomeModule,
     ProfileModule,
-    ChannelsModule
+    ChannelsModule,
+    LoginModule,
+    SignupModule
+  ],
+  exports:[
+    LoginModule,
+    SignupModule
   ]
 })
 export class ComponentsModule { }

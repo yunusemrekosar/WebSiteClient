@@ -8,7 +8,6 @@ import { UserModule } from './user/user.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
-import { SignupModule } from './signup/signup.module';
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     AdminModule,
     UserModule,
-    SignupModule,
     UserAdminModule,
     BrowserAnimationsModule,
     HttpClientModule,

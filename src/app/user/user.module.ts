@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ComponentsModule } from './components/components.module';
+import { LoginModule } from './components/login/login.module';
+import { SignupModule } from './components/signup/signup.module';
+
 
 
 @NgModule({
@@ -8,6 +11,10 @@ import { ComponentsModule } from './components/components.module';
   imports: [
     CommonModule,
     ComponentsModule
+  ],
+  exports: [
+    LoginModule,
+    SignupModule
   ]
 
 })

@@ -5,11 +5,11 @@ import { LayoutComponent } from './admin/layout/layout.component';
 import { HomeComponent } from './user/components/home/home.component';
 import { DashboardComponent as UserAdminDashboard } from './user-admin/components/dashboard/dashboard.component';
 import { LayoutComponent as UserAdminLayout  } from './user-admin/layout/layout.component';
-import {SignupComponent} from './signup/signup.component';
+
 
 
 const routes: Routes = [
-  { path:"signup", component: SignupComponent},
+ 
   { path: "admin", component: LayoutComponent, children: [
     { path: "", component: DashboardComponent},
     { path: "ads", loadChildren: () => import("./admin/components/ads/ads.module").then(m => m.AdsModule) },
@@ -29,6 +29,9 @@ const routes: Routes = [
 {path:"channels", loadChildren:()=> import("./user/components/channels/channels.module").then(m=>m.ChannelsModule)},
 {path:"dashboard", loadChildren:()=> import("./user/components/dashboard/dashboard.module").then(m=>m.DashboardModule)},
 {path:"profile", loadChildren:()=> import("./user/components/profile/profile.module").then(m=>m.ProfileModule)},
+{path: "login", loadChildren: () => import("./user/components/login/login.module").then(m=>m.LoginModule)},
+{path: "signup", loadChildren: () => import("./user/components/signup/signup.module").then(m=>m.SignupModule)}
+
 ];
 
 @NgModule({
