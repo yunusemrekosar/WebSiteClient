@@ -35,8 +35,7 @@ export class SignupComponent  implements OnInit {
      },
      errormessage => { 
       
-      this.toastr.message(errormessage," ",MessageType.Error, Position.TopRight) ,{
-      enableHtml: true}
+      this.toastr.message(errormessage," ",MessageType.Error, Position.TopRight)
      });   
   }
 
