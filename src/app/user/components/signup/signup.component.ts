@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Create_User } from 'src/app/contracts/Create_User';
 import { CostomtoastrService, MessageType, Position } from 'src/app/services/common/costomtoastr.service';
+import { FileuploadOptions } from 'src/app/services/common/fileupload/fileupload.component';
 import { SignupserviceService } from 'src/app/services/user/signupservice.service';
 
 
@@ -13,6 +14,14 @@ export class SignupComponent  implements OnInit {
 
   constructor(private signupServices: SignupserviceService, private toastr: CostomtoastrService) { }
   
+
+
+  @Output() fileUploadOptions: Partial<FileuploadOptions> = {
+    controller: "users",
+    action: "Upload",
+    accept: ".png, .jpeg, .jpg",
+    explanation: "Choose Your Profil Photo"
+  };
 
   ngOnInit(): void { }
 

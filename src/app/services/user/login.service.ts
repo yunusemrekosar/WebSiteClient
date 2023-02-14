@@ -1,8 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { firstValueFrom, Observable } from 'rxjs';
 import { loginDTO } from 'src/app/contracts/loginDTO';
-import { token } from 'src/app/contracts/token';
+import { tokenResponse } from 'src/app/contracts/tokenResponse';
+import { CostomtoastrService, MessageType, Position } from '../common/costomtoastr.service';
 import { HttpclientService } from '../common/httpclient.service';
 
 @Injectable({
@@ -10,21 +11,24 @@ import { HttpclientService } from '../common/httpclient.service';
 })
 export class LoginService {
 
-  constructor( private HttpclientService : HttpclientService) { }
+  constructor( private HttpclientService : HttpclientService, private toastr : CostomtoastrService) { }
 
-  login (login :loginDTO, successCalBack? : any , errorCalBack?: any)
- {
-  this.HttpclientService.post({
+  login (login :loginDTO)
+  {
+  const Observable : Observable<any | tokenResponse > = this.HttpclientService.post<any | tokenResponse>({
       controller: "users",
       action: "Login"
-    },login).subscribe(
-      result => {successCalBack();}
-      , 
-      (errorResponse : HttpErrorResponse) => {const err: string = errorResponse.error;
-      let message = err;
-      errorCalBack(message);
-      }    
-    );
-  }
-}
+    },login)
+
+firstValueFrom<tokenResponse | null | undefined>(Observable).then((tokenResponse) => {
+    if (tokenResponse != null) {
+      localStorage.setItem("accessToken", tokenResponse.token.accessToken);
+      localStorage.setItem("expiration", tokenResponse.token.expiration.toString());
+      this.toastr.message("Login Successful", "Login", MessageType.Success, Position.TopRight);
+    } 
+  }).catch((error) => {
+    console.error(error);
+    this.toastr.message("Login failed", "Login", MessageType.Error, Position.TopRight);
+  });
+}}
 

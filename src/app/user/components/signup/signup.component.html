@@ -41,12 +41,12 @@
         <input type="text"  aria-label="City" class="form-control" placeholder="City" #txtCity>
         <input type="text" aria-label="Address" class="form-control" placeholder="Address" #txtAddress>
       </div>
+      <label for="" class="form-text"> We'll never share your email with anyone else.</label>  
       <br>
       </div>
-      <label for="" class="form-text"> We'll never share your email with anyone else.</label>  
-    
     <br>
     <button type="submit" class="btn btn-warning" (click)="create(txtFirstname,txtLastname,txtUserName,txtPassword,txtPhoneNumber,txtBirthDay,txtCountry,txtCity,txtAddress,txtemail)" > Sign Up </button>
   </div>
-
-  
+  <div class="container" style="margin: 2%; padding: auto;">
+  <app-fileupload [options]="fileUploadOptions"></app-fileupload>
+</div>

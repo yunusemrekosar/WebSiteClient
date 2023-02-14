@@ -1,15 +1,16 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './admin/components/dashboard/dashboard.component';
 import { LayoutComponent } from './admin/layout/layout.component';
 import { HomeComponent } from './user/components/home/home.component';
 import { DashboardComponent as UserAdminDashboard } from './user-admin/components/dashboard/dashboard.component';
 import { LayoutComponent as UserAdminLayout  } from './user-admin/layout/layout.component';
+import { FileuploadComponent } from './services/common/fileupload/fileupload.component';
 
 
 
 const routes: Routes = [
- 
+ //{path : "test", component: FileuploadComponent},
   { path: "admin", component: LayoutComponent, children: [
     { path: "", component: DashboardComponent},
     { path: "ads", loadChildren: () => import("./admin/components/ads/ads.module").then(m => m.AdsModule) },

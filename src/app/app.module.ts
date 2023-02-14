@@ -9,25 +9,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import { ToastrModule } from 'ngx-toastr';
+import { FileuploadModule } from "./services/common/fileupload/fileupload.module";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    AdminModule,
-    UserModule,
-    UserAdminModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatButtonModule,
-    ToastrModule.forRoot(), 
-  ],
-  providers: [
-    {provide: "baseurl", useValue:"https://localhost:7050/api", multi: true}
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+    ],
+    providers: [
+        { provide: "baseurl", useValue: "https://localhost:7050/api", multi: true }
+    ],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        AdminModule,
+        UserModule,
+        UserAdminModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatButtonModule,
+        ToastrModule.forRoot(),
+        FileuploadModule
+    ]
 })
 export class AppModule { }
