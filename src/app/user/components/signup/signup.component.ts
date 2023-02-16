@@ -17,7 +17,7 @@ export class SignupComponent  implements OnInit {
 
 
   @Output() fileUploadOptions: Partial<FileuploadOptions> = {
-    controller: "users",
+    controller: "Login",
     action: "Upload",
     accept: ".png, .jpeg, .jpg",
     explanation: "Choose Your Profil Photo"

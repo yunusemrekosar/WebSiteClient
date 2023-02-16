@@ -31,7 +31,7 @@ constructor( private httpClientService : HttpclientService, private CostomToastr
     },fileData).subscribe(data => {
       this.CostomToastr.message("Upload Successful", "Success",
        MessageType.Success, Position.TopRight);
-    },
+    },  
   (error : HttpErrorResponse) => {
     this.CostomToastr.message("Upload Is Not Successful", "Error",
     MessageType.Error, Position.TopRight );

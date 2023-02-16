@@ -16,7 +16,7 @@ export class LoginService {
   login (login :loginDTO)
   {
   const Observable : Observable<any | tokenResponse > = this.HttpclientService.post<any | tokenResponse>({
-      controller: "users",
+      controller: "Login",
       action: "Login"
     },login)
 

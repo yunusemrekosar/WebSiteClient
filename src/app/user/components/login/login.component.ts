@@ -19,14 +19,6 @@ export class LoginComponent {
      login.usernameoremail = txtUserNameorEmail.value;
      login.password = txtPassword.value;
 
-     this.loginServices.login(login)
-    //  {this.toastr.message("successful", "login" , MessageType.Success , Position.TopRight);}
-    //  ,errormessage => 
-    //  {this.toastr.message(errormessage," ",MessageType.Error, Position.TopRight)}
-    // )
-
-    
+     this.loginServices.login(login)    
   }
-  
-
 }
